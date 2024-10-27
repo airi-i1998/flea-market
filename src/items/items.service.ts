@@ -6,11 +6,11 @@ export class ItemsService {
   // 商品を保存するための配列変数
   private items: Item[] = [];
   findAll(): Item[] {
-    return this.items
+    return this.items;
   }
 
   findById(id: string): Item {
-    return this.items.find((item) => item.id === id)
+    return this.items.find((item) => item.id === id);
   }
 
   create(item: Item): Item {
@@ -18,9 +18,13 @@ export class ItemsService {
     return item;
   }
 
-  updateStatus(id: string): Item{
-    const item = this.findById(id)
-    item.status = 'SOLD_OUT'
-    return item
+  updateStatus(id: string): Item {
+    const item = this.findById(id);
+    item.status = 'SOLD_OUT';
+    return item;
+  }
+
+  delete(id: string) {
+    this.items = this.items.filter((item) => item.id !== id);
   }
 }
