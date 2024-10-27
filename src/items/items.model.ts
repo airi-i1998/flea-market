@@ -4,5 +4,5 @@ export interface Item {
   price: number,
   description?: string,
   // ユニオン型
-  state: 'ON_SALE' | 'SOLD_OUT'
+  status: 'ON_SALE' | 'SOLD_OUT'
 }
