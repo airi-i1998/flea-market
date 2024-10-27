@@ -13,7 +13,11 @@ export class ItemsService {
     return this.items.find((item) => item.id === id);
   }
 
-  create(item: Item): Item {
+  create(createItemDto): Item {
+    const item: Item = {
+      ...createItemDto,
+      status: 'ON_SALE'
+    }
     this.items.push(item);
     return item;
   }
