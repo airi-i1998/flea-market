@@ -5,8 +5,12 @@ import { Item } from './items.model';
 export class ItemsService {
   // 商品を保存するための配列変数
   private items: Item[] = [];
-  findAll() {
-    return 'This is ItemsService';
+  findAll(): Item[] {
+    return this.items
+  }
+
+  findById(id: string): Item {
+    return this.items.find((item) => item.id === id)
   }
 
   create(item: Item): Item {
